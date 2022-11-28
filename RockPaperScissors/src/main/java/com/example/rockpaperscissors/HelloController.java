@@ -52,5 +52,13 @@ public class HelloController {
             rmChoice = "Scissor";
         }
 
+        //Jannick - Code:
+
+
+
+
+        //Ladebalken:
+
+
     }
 }
