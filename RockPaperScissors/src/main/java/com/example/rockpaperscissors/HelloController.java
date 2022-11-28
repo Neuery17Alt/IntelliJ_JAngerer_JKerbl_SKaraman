@@ -51,6 +51,5 @@ public class HelloController {
         } else {
             rmChoice = "Scissor";
         }
-
     }
 }
