@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.util.Random;
+
 public class HelloController {
     @FXML
     private Label welcomeText;
@@ -16,29 +18,39 @@ public class HelloController {
     @FXML
     private Button Rock, Paper, Scissor;
     private String choice;
-    private boolean free = true;
 
     @FXML
     private void RockButtonClicked () {
-        if (free) {
             choice = "Rock";
-            free = false;
-        }
+            randomChoice();
     }
 
     @FXML
     private void PaperButtonClicked () {
-        if (free) {
             choice = "Paper";
-            free = false;
-        }
+            randomChoice();
     }
 
     @FXML
     private void ScissorButtonClicked () {
-        if (free) {
             choice = "Scissor";
-            free = false;
+            randomChoice();
+    }
+
+    private void randomChoice () {
+        int num = 0;
+
+        Random random = new Random();
+        num = random.nextInt(3)+1;
+        System.out.println(num);
+
+        if (num == 1) {
+            choice = "Rock";
+        } else if (num == 2) {
+            choice = "Paper";
+        } else {
+            choice = "Scissor";
         }
+
     }
 }
