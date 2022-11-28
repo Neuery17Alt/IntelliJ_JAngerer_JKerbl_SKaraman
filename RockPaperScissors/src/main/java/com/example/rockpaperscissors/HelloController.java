@@ -17,7 +17,7 @@ public class HelloController {
 
     @FXML
     private Button Rock, Paper, Scissor;
-    private String choice;
+    private String choice, rmChoice;
 
     @FXML
     private void RockButtonClicked () {
@@ -45,11 +45,11 @@ public class HelloController {
         System.out.println(num);
 
         if (num == 1) {
-            choice = "Rock";
+            rmChoice = "Rock";
         } else if (num == 2) {
-            choice = "Paper";
+            rmChoice = "Paper";
         } else {
-            choice = "Scissor";
+            rmChoice = "Scissor";
         }
 
     }
