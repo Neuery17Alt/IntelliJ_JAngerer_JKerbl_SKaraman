@@ -10,10 +10,6 @@ public class HelloController {
     @FXML
     private Label welcomeText;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
 
     @FXML
     private Button rockButton, paperButton, scissorButton;
