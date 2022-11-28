@@ -1,2 +1,2 @@
-public class TellYourName {
+interface TellYourName {
 }

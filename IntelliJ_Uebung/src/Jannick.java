@@ -1,2 +1,2 @@
-public class Jannick {
+public class Jannick implements TellYourName{
 }
