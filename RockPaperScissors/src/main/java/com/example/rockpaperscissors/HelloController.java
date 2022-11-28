@@ -52,4 +52,22 @@ public class HelloController {
             rmChoice = "Scissor";
         }
     }
+
+    private void Winner () {
+        if (choice.equals("Rock") && rmChoice.equals("Scissor")) {
+            System.out.println("Gewinner ist Spieler1");
+        } else {
+            System.out.println("Gewinner ist Spieler2");
+        }
+        if (choice.equals("Paper") && rmChoice.equals("Rock")) {
+            System.out.println("Gewinner ist Spieler1");
+        } else {
+            System.out.println("Gewinner ist Spieler2");
+        }
+        if (choice.equals("Scissor") && rmChoice.equals("Paper")) {
+            System.out.println("Gewinner ist Spieler1");
+        } else {
+            System.out.println("Gewinner ist Spieler2");
+        }
+    }
 }
