@@ -7,9 +7,6 @@ import javafx.scene.control.Label;
 import java.util.Random;
 
 public class HelloController {
-    @FXML
-    private Label welcomeText;
-
 
     @FXML
     private Button rockButton, paperButton, scissorButton;
