@@ -49,6 +49,7 @@ public class HelloController {
             rmChoice = "Scissor";
         }
     }
+
     private void Winner () {
         if (choice.equals("Rock") && rmChoice.equals("Scissor")) {
             System.out.println("Gewinner ist Spieler1");
@@ -71,5 +72,8 @@ public class HelloController {
             System.out.println("Gewinner ist Spieler2");
             rockButton.setVisible(false);
         }
+
+
+        System.out.println("Fehler!");
     }
 }
