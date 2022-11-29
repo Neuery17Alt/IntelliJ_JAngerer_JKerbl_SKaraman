@@ -48,32 +48,60 @@ public class HelloController {
         } else {
             rmChoice = "Scissor";
         }
+        Winner();
+
     }
 
     private void Winner () {
         if (choice.equals("Rock") && rmChoice.equals("Scissor")) {
             System.out.println("Gewinner ist Spieler1");
             paperButton.setVisible(false);
-        } else {
+            wait(7000);
+            System.out.println("Hallo");
+            paperButton.setVisible(true);
+        } else if (!choice.equals(rmChoice)) {
             System.out.println("Gewinner ist Spieler2");
             scissorButton.setVisible(false);
+
+            wait(7000);
+            System.out.println("Hallo");
+            scissorButton.setVisible(true);
         }
         if (choice.equals("Paper") && rmChoice.equals("Rock")) {
             System.out.println("Gewinner ist Spieler1");
             scissorButton.setVisible(false);
-        } else {
+            wait(7000);
+            System.out.println("Hallo");
+            scissorButton.setVisible(true);
+        } else if (!choice.equals(rmChoice)) {
             System.out.println("Gewinner ist Spieler2");
             scissorButton.setVisible(false);
+
+            wait(7000);
+            System.out.println("Hallo");
+            scissorButton.setVisible(true);
         }
         if (choice.equals("Scissor") && rmChoice.equals("Paper")) {
             System.out.println("Gewinner ist Spieler1");
             rockButton.setVisible(false);
-        } else {
+            wait(7000);
+            System.out.println("Hallo");
+            rockButton.setVisible(true);
+        } else if (!choice.equals(rmChoice)) {
             System.out.println("Gewinner ist Spieler2");
             rockButton.setVisible(false);
+            wait(7000);
+            System.out.println("Hallo");
+            rockButton.setVisible(true);
         }
-        System.out.println("Hallihallo");
 
-        System.out.println("Fehler!");
+    }
+
+    public static void wait(int ms) {
+        try {
+            Thread.sleep(ms);
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
     }
 }

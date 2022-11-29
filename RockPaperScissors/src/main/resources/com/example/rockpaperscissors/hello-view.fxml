@@ -10,5 +10,7 @@
     </padding>
 
     <Label fx:id="welcomeText" />
-    <Button fx:id="rockButton" onAction="#onHelloButtonClick" text="Rock" />
+    <Button fx:id="rockButton" onAction="#RockButtonClicked" text="Rock" />
+   <Button fx:id="paperButton" layoutX="30.0" layoutY="67.0" onAction="#PaperButtonClicked" text="Paper" />
+   <Button fx:id="scissorButton" layoutX="30.0" layoutY="112.0" onAction="#ScissorButtonClicked" text="Scissor" />
 </VBox>
