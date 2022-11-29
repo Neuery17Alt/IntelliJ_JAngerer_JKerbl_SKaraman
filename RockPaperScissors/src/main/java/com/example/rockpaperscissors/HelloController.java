@@ -56,5 +56,6 @@ public class HelloController {
             rmChoice = "Scissor";
         }
 
+        
     }
 }
