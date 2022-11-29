@@ -46,5 +46,27 @@ public class HelloController {
         }
     }
 
-
+    private void Winner () {
+        if (choice.equals("Rock") && rmChoice.equals("Scissor")) {
+            System.out.println("Gewinner ist Spieler1");
+            paperButton.setVisible(false);
+        } else {
+            System.out.println("Gewinner ist Spieler2");
+            scissorButton.setVisible(false);
+        }
+        if (choice.equals("Paper") && rmChoice.equals("Rock")) {
+            System.out.println("Gewinner ist Spieler1");
+            scissorButton.setVisible(false);
+        } else {
+            System.out.println("Gewinner ist Spieler2");
+            scissorButton.setVisible(false);
+        }
+        if (choice.equals("Scissor") && rmChoice.equals("Paper")) {
+            System.out.println("Gewinner ist Spieler1");
+            rockButton.setVisible(false);
+        } else {
+            System.out.println("Gewinner ist Spieler2");
+            rockButton.setVisible(false);
+        }
+    }
 }
