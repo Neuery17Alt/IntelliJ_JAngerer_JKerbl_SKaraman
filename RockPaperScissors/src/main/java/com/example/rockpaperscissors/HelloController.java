@@ -3,10 +3,14 @@ package com.example.rockpaperscissors;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-
+import javafx.scene.control.ProgressBar;
 import java.util.Random;
 
 public class HelloController {
+
+    @FXML
+    private ProgressBar progressbar;
+
     @FXML
     private Label welcomeText;
 
@@ -51,14 +55,6 @@ public class HelloController {
         } else {
             rmChoice = "Scissor";
         }
-
-        //Jannick - Code:
-
-
-
-
-        //Ladebalken:
-
 
     }
 }
