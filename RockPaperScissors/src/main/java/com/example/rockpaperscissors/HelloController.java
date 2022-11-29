@@ -8,16 +8,6 @@ import java.util.Random;
 
 public class HelloController {
 
-    @FXML
-    private ProgressBar progressbar;
-
-    @FXML
-    private Label welcomeText;
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
 
     @FXML
     private Button Rock, Paper, Scissor;
