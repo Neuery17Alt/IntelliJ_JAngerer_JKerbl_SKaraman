@@ -3,6 +3,7 @@ package com.example.rockpaperscissors;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 
 import java.util.Random;
 
@@ -13,21 +14,24 @@ public class HelloController {
     private String choice, rmChoice;
 
     @FXML
+    private ProgressBar progressbar;
+
+    @FXML
     private void RockButtonClicked () {
-            choice = "Rock";
-            randomChoice();
+        choice = "Rock";
+        randomChoice();
     }
 
     @FXML
     private void PaperButtonClicked () {
-            choice = "Paper";
-            randomChoice();
+        choice = "Paper";
+        randomChoice();
     }
 
     @FXML
     private void ScissorButtonClicked () {
-            choice = "Scissor";
-            randomChoice();
+        choice = "Scissor";
+        randomChoice();
     }
 
     private void randomChoice () {
@@ -45,7 +49,6 @@ public class HelloController {
             rmChoice = "Scissor";
         }
     }
-
     private void Winner () {
         if (choice.equals("Rock") && rmChoice.equals("Scissor")) {
             System.out.println("Gewinner ist Spieler1");
