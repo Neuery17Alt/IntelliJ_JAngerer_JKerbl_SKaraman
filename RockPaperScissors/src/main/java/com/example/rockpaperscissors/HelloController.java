@@ -72,7 +72,7 @@ public class HelloController {
             System.out.println("Gewinner ist Spieler2");
             rockButton.setVisible(false);
         }
-
+        System.out.println("Hallihallo");
 
         System.out.println("Fehler!");
     }
