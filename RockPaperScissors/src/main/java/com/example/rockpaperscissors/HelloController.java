@@ -50,6 +50,18 @@ public class HelloController {
         }
     }
 
+    final int MAX=10;
+    private void ChoiceGenerator() {
+
+        for (int i = 0; i < MAX; i++){
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            progressbar.setProgress((float) (i+1)/10);
+        }
+    }
     private void Winner () {
         if (choice.equals("Rock") && rmChoice.equals("Scissor")) {
             System.out.println("Gewinner ist Spieler1");
@@ -72,8 +84,10 @@ public class HelloController {
             System.out.println("Gewinner ist Spieler2");
             rockButton.setVisible(false);
         }
+    }
 
-
-        System.out.println("Fehler!");
+    @FXML
+    private void OnButtonClick(){
+        ChoiceGenerator();
     }
 }
