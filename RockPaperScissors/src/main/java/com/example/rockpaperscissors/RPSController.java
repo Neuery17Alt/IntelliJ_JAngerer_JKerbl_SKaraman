@@ -7,11 +7,14 @@ import javafx.scene.control.ProgressBar;
 
 import java.util.Random;
 
-public class HelloController {
+public class RPSController {
 
     @FXML
     private Button rockButton, paperButton, scissorButton;
     private String choice, rmChoice;
+    private int winner = 0;
+    @FXML
+    private Label choice1, choice2;
 
     @FXML
     private ProgressBar progressbar;
@@ -48,32 +51,41 @@ public class HelloController {
         } else {
             rmChoice = "Scissor";
         }
+        Winner();
+
     }
 
     private void Winner () {
         if (choice.equals("Rock") && rmChoice.equals("Scissor")) {
-            System.out.println("Gewinner ist Spieler1");
-            paperButton.setVisible(false);
+            winner = 1;
+        } else if (choice.equals("Paper") && rmChoice.equals("Rock")) {
+            winner = 1;
+        } else if (choice.equals("Scissor") && rmChoice.equals("Paper")) {
+            winner = 1;
+        } else if (choice.equals(rmChoice)){
+            winner = 0;
         } else {
-            System.out.println("Gewinner ist Spieler2");
-            scissorButton.setVisible(false);
+            winner = 2;
         }
-        if (choice.equals("Paper") && rmChoice.equals("Rock")) {
-            System.out.println("Gewinner ist Spieler1");
-            scissorButton.setVisible(false);
-        } else {
-            System.out.println("Gewinner ist Spieler2");
-            scissorButton.setVisible(false);
-        }
-        if (choice.equals("Scissor") && rmChoice.equals("Paper")) {
-            System.out.println("Gewinner ist Spieler1");
-            rockButton.setVisible(false);
-        } else {
-            System.out.println("Gewinner ist Spieler2");
-            rockButton.setVisible(false);
-        }
+        Points();
+    }
 
+    private void Points () {
+        int points = Integer.parseInt(pointsbar.getText());
 
-        System.out.println("Fehler!");
+        if (winner == 1) {
+            points = points + 2;
+        } else if (winner == 2) {
+            if (points != 0) {
+                points--;
+            }
+        }
+            winner = 0;
+
+            pointsbar.setText("" + points);
+    }
+
+    private void Outprint () {
+
     }
 }
