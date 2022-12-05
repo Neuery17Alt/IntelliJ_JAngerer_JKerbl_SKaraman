@@ -15,6 +15,8 @@ public class RPSController {
     private Label pointsbar;
     private String choice, rmChoice;
     private int winner = 0;
+    @FXML
+    private Label choice1, choice2;
 
     @FXML
     private ProgressBar progressbar;
@@ -85,7 +87,7 @@ public class RPSController {
             pointsbar.setText("" + points);
     }
 
-    private void Outprint () {
+    /*private void Outprint () {
 
-    }
+    }*/
 }
