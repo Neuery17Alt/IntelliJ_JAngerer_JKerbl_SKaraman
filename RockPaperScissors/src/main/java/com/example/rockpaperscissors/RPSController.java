@@ -71,7 +71,7 @@ public class RPSController {
     }
 
     private void Points () {
-        int points = Integer.parseInt(pointsbar.getText());
+        /*int points = Integer.parseInt(pointsbar.getText());
 
         if (winner == 1) {
             points = points + 2;
@@ -82,7 +82,7 @@ public class RPSController {
         }
             winner = 0;
 
-            pointsbar.setText("" + points);
+            pointsbar.setText("" + points);*/
     }
 
     private void Outprint () {
