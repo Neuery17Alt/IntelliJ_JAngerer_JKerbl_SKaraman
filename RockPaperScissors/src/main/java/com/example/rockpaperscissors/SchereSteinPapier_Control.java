@@ -21,8 +21,8 @@ public class SchereSteinPapier_Control {
     private Label pointsbar, highscorebar;
     @FXML
     private Label labelChoose, label_Winner;
-    int points = Integer.parseInt(pointsbar.getText());
-    int highscorepoints = points;
+
+    //int highscorepoints = points;
 
     @FXML
     private void RockButtonClicked() {
@@ -133,12 +133,12 @@ public class SchereSteinPapier_Control {
             PlayerTwo();
         }
         Points();
-        Highscore();
+       // Highscore();
     }
 
     private void Points() {
 
-
+        int points = Integer.parseInt(pointsbar.getText());
         if (winner == 1) {
             points = points + 2;
         } else if (winner == 2) {
@@ -151,13 +151,15 @@ public class SchereSteinPapier_Control {
             winner = 0;
             pointsbar.setText(String.valueOf(points));
     }
-
+/*
     private void Highscore() {
         if (points > highscorepoints) {
             highscorebar.setText(String.valueOf(highscorepoints));
         }
     }
 
+
+ */
     private void ChoiceGenerator() {
 
         if (proof == 1){
