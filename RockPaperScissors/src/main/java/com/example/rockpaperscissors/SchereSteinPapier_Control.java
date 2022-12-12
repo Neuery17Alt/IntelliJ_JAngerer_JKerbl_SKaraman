@@ -1,7 +1,14 @@
 package com.example.rockpaperscissors;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.util.Duration;
+
 
 import java.util.Random;
 
