@@ -18,7 +18,11 @@ public class SchereSteinPapier_Control {
     @FXML
     private ProgressBar progressbar;
     @FXML
+    private Label pointsbar, highscorebar;
+    @FXML
     private Label labelChoose, label_Winner;
+    int points = Integer.parseInt(pointsbar.getText());
+    int highscorepoints = points;
 
     @FXML
     private void RockButtonClicked() {
@@ -45,6 +49,18 @@ public class SchereSteinPapier_Control {
     }
 
     @FXML
+    private void ScissorButtonClicked() {
+        proof++;
+        ChoiceGenerator();
+        choice = "Scissor";
+        labelChoose.setText("Schere ...");
+        if (proof == 3){
+            randomChoice();
+            choice1.setText("Schere");
+        }
+    }
+
+    @FXML
     private void onClickExit(){
         System.exit(0);
     }
@@ -61,20 +77,9 @@ public class SchereSteinPapier_Control {
         rockButton.setDisable(false);
     }
 
-    @FXML
-    private void ScissorButtonClicked() {
-        proof++;
-        ChoiceGenerator();
-        choice = "Scissor";
-        labelChoose.setText("Schere ...");
-        if (proof == 3){
-            randomChoice();
-            choice1.setText("Schere");
-        }
-    }
 
-    @FXML
-    private Label pointsbar;
+
+
 
     private void randomChoice() {
         int num = 0;
@@ -128,10 +133,11 @@ public class SchereSteinPapier_Control {
             PlayerTwo();
         }
         Points();
+        Highscore();
     }
 
     private void Points() {
-        int points = Integer.parseInt(pointsbar.getText());
+
 
         if (winner == 1) {
             points = points + 2;
@@ -145,30 +151,15 @@ public class SchereSteinPapier_Control {
             winner = 0;
             pointsbar.setText(String.valueOf(points));
     }
-/*
-    private void Outprint() {
 
-    }
-
- */
-/*
-    public static void wait(int ms) {
-        try {
-            Thread.sleep(ms);
-        } catch (InterruptedException ex) {
-            Thread.currentThread().interrupt();
+    private void Highscore() {
+        if (points > highscorepoints) {
+            highscorebar.setText(String.valueOf(highscorepoints));
         }
     }
- */
 
-   // final int MAX = 10;
     private void ChoiceGenerator() {
-        /*
-        for (int i = 0; i < MAX; i++) {
-            progressbar.setProgress((float) (i + 1) / 10);
-            wait(200);
-        }
-         */
+
         if (proof == 1){
             progressbar.setProgress(0.3333333333);
         } else if (proof == 2) {
