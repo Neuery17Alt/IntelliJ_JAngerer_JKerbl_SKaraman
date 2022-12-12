@@ -67,7 +67,7 @@ public class SchereSteinPapier_Control {
     private void onClickFurther(){
         proof = 0;
         progressbar.setProgress(0);
-        labelChoose.setText("Neue Runde gestartet!");
+        labelChoose.setText("Neue Runde!");
         choice1.setText(" ");
         choice2.setText(" ");
         scissorButton.setDisable(false);
@@ -84,7 +84,6 @@ public class SchereSteinPapier_Control {
 
         Random random = new Random();
         num = random.nextInt(3) + 1;
-      //  System.out.println(num);
 
         if (num == 1) {
             rmChoice = "Rock";
@@ -151,7 +150,7 @@ public class SchereSteinPapier_Control {
 
     private void Highscore() {
     int points = Integer.parseInt(pointsbar.getText());
-    int highscorepoints = 0;
+    int highscorepoints = Integer.parseInt(highscorebar.getText());
         if (points > highscorepoints) {
             highscorepoints = points;
             highscorebar.setText(String.valueOf(highscorepoints));
