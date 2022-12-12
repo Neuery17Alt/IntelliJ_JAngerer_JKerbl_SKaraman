@@ -18,7 +18,6 @@ public class SchereSteinPapier_Control {
     private Button rockButton, paperButton, scissorButton;
     private String choice, rmChoice;
     private int winner = 0;
-    private int proof = 0;
 
     @FXML
     private Label choice1, choice2;
@@ -31,38 +30,26 @@ public class SchereSteinPapier_Control {
 
     @FXML
     private void RockButtonClicked() {
-        proof++;
-        ChoiceGenerator();
         choice = "Rock";
         labelChoose.setText("Stein ...");
-        if (proof==3){
-            randomChoice();
-            choice1.setText("Stein");
-        }
+        choice1.setText("Stein");
+        Load();
     }
 
     @FXML
     private void PaperButtonClicked() {
-        proof++;
-        ChoiceGenerator();
         choice = "Paper";
         labelChoose.setText("Papier ...");
-        if (proof==3){
-            randomChoice();
-            choice1.setText("Papier");
-        }
+        choice1.setText("Papier");
+        Load();
     }
 
     @FXML
     private void ScissorButtonClicked() {
-        proof++;
-        ChoiceGenerator();
         choice = "Scissor";
         labelChoose.setText("Schere ...");
-        if (proof == 3){
-            randomChoice();
-            choice1.setText("Schere");
-        }
+        choice1.setText("Schere");
+        Load();
     }
 
     @FXML
@@ -72,8 +59,6 @@ public class SchereSteinPapier_Control {
 
     @FXML
     private void onClickFurther(){
-        proof = 0;
-        progressbar.setProgress(0);
         labelChoose.setText("Neue Runde!");
         choice1.setText(" ");
         choice2.setText(" ");
@@ -83,10 +68,7 @@ public class SchereSteinPapier_Control {
     }
 
 
-
-
-
-    private void randomChoice() {
+    public void RandomChoice() {
         int num = 0;
 
         Random random = new Random();
@@ -155,7 +137,7 @@ public class SchereSteinPapier_Control {
             pointsbar.setText(String.valueOf(points));
     }
 
-    private void Highscore() {
+    public void Highscore() {
     int points = Integer.parseInt(pointsbar.getText());
     int highscorepoints = Integer.parseInt(highscorebar.getText());
         if (points > highscorepoints) {
@@ -164,19 +146,15 @@ public class SchereSteinPapier_Control {
         }
     }
 
-
-
-    private void ChoiceGenerator() {
-
-        if (proof == 1){
-            progressbar.setProgress(0.3333333333);
-        } else if (proof == 2) {
-            progressbar.setProgress(0.6666666666);
-        } else if (proof == 3){
-            progressbar.setProgress(0.9999999999);
+    public void ButtonsDisable() {
             scissorButton.setDisable(true);
             paperButton.setDisable(true);
             rockButton.setDisable(true);
         }
+
+    private void Load () {
+        ProgressBarClass progressBar = new ProgressBarClass();
+        progressBar.test(progressbar, this);
     }
-}
+
+    }
