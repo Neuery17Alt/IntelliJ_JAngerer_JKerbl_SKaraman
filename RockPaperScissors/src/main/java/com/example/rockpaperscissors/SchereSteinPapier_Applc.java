@@ -14,7 +14,7 @@ import java.io.IOException;
 public class SchereSteinPapier_Applc extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        File f = new File("C:\\Users\\janni\\OneDrive\\Dokumente\\Schule\\3AHITN\\ITP2\\GitHub\\Java_JAngerer_JKerbl_SKaraman\\IntelliJ_JAngerer_JKerbl_SKaraman\\RockPaperScissors\\src\\main\\resources\\yt1s.com_-_Lil_Baby_Not_Finished_Lyric_Video.mp3");
+        File f = new File("images\\yt1s.com - Mice On Venus.mp3");
         javafx.scene.media.Media m = new javafx.scene.media.Media(f.toURI().toString());
         MediaPlayer mp = new MediaPlayer(m);
         MediaView mv = new MediaView(mp);
