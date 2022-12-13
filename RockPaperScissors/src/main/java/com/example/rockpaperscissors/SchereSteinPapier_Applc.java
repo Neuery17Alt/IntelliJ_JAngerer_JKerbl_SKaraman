@@ -29,6 +29,7 @@ public class SchereSteinPapier_Applc extends Application {
 
 
 
+
     }
     public static void main(String[] args) {
         launch();
