@@ -54,6 +54,7 @@ public class SchereSteinPapier_Control {
     @FXML
     private void onClickFurther(){
         labelChoose.setText("Neue Runde!");
+        label_Winner.setVisible(false);
         choice1.setText(" ");
         choice2.setText(" ");
         scissorButton.setDisable(false);
@@ -79,6 +80,7 @@ public class SchereSteinPapier_Control {
             choice2.setText("Schere");
         }
         Winner();
+        label_Winner.setVisible(true);
 
     }
 
