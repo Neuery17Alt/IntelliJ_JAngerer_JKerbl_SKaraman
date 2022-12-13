@@ -3,6 +3,7 @@ package com.example.rockpaperscissors;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+
 import java.util.Random;
 
 public class SchereSteinPapier_Control {
@@ -11,37 +12,38 @@ public class SchereSteinPapier_Control {
     private Button rockButton, paperButton, scissorButton;
     private String choice, rmChoice;
     private int winner = 0;
-    private int proof = 0;
 
     @FXML
     private Label choice1, choice2;
     @FXML
     private ProgressBar progressbar;
     @FXML
+    private Label pointsbar, highscorebar;
+    @FXML
     private Label labelChoose, label_Winner;
 
     @FXML
     private void RockButtonClicked() {
-        proof++;
-        ChoiceGenerator();
         choice = "Rock";
         labelChoose.setText("Stein ...");
-        if (proof==3){
-            randomChoice();
-            choice1.setText("Stein");
-        }
+        choice1.setText("Stein");
+        Load();
     }
 
     @FXML
     private void PaperButtonClicked() {
-        proof++;
-        ChoiceGenerator();
         choice = "Paper";
         labelChoose.setText("Papier ...");
-        if (proof==3){
-            randomChoice();
-            choice1.setText("Papier");
-        }
+        choice1.setText("Papier");
+        Load();
+    }
+
+    @FXML
+    private void ScissorButtonClicked() {
+        choice = "Scissor";
+        labelChoose.setText("Schere ...");
+        choice1.setText("Schere");
+        Load();
     }
 
     @FXML
@@ -51,9 +53,7 @@ public class SchereSteinPapier_Control {
 
     @FXML
     private void onClickFurther(){
-        proof = 0;
-        progressbar.setProgress(0);
-        labelChoose.setText("Neue Runde gestartet!");
+        labelChoose.setText("Neue Runde!");
         choice1.setText(" ");
         choice2.setText(" ");
         scissorButton.setDisable(false);
@@ -61,27 +61,12 @@ public class SchereSteinPapier_Control {
         rockButton.setDisable(false);
     }
 
-    @FXML
-    private void ScissorButtonClicked() {
-        proof++;
-        ChoiceGenerator();
-        choice = "Scissor";
-        labelChoose.setText("Schere ...");
-        if (proof == 3){
-            randomChoice();
-            choice1.setText("Schere");
-        }
-    }
 
-    @FXML
-    private Label pointsbar;
-
-    private void randomChoice() {
+    public void RandomChoice() {
         int num = 0;
 
         Random random = new Random();
         num = random.nextInt(3) + 1;
-      //  System.out.println(num);
 
         if (num == 1) {
             rmChoice = "Rock";
@@ -128,11 +113,11 @@ public class SchereSteinPapier_Control {
             PlayerTwo();
         }
         Points();
+        Highscore();
     }
 
     private void Points() {
         int points = Integer.parseInt(pointsbar.getText());
-
         if (winner == 1) {
             points = points + 2;
         } else if (winner == 2) {
@@ -145,39 +130,25 @@ public class SchereSteinPapier_Control {
             winner = 0;
             pointsbar.setText(String.valueOf(points));
     }
-/*
-    private void Outprint() {
 
-    }
-
- */
-/*
-    public static void wait(int ms) {
-        try {
-            Thread.sleep(ms);
-        } catch (InterruptedException ex) {
-            Thread.currentThread().interrupt();
+    public void Highscore() {
+    int points = Integer.parseInt(pointsbar.getText());
+    int highscorepoints = Integer.parseInt(highscorebar.getText());
+        if (points > highscorepoints) {
+            highscorepoints = points;
+            highscorebar.setText(String.valueOf(highscorepoints));
         }
     }
- */
 
-   // final int MAX = 10;
-    private void ChoiceGenerator() {
-        /*
-        for (int i = 0; i < MAX; i++) {
-            progressbar.setProgress((float) (i + 1) / 10);
-            wait(200);
-        }
-         */
-        if (proof == 1){
-            progressbar.setProgress(0.3333333333);
-        } else if (proof == 2) {
-            progressbar.setProgress(0.6666666666);
-        } else if (proof == 3){
-            progressbar.setProgress(0.9999999999);
+    public void ButtonsDisable() {
             scissorButton.setDisable(true);
             paperButton.setDisable(true);
             rockButton.setDisable(true);
         }
+
+    private void Load () {
+        ProgressBarClass progressBar = new ProgressBarClass();
+        progressBar.test(progressbar, this);
     }
-}
+
+    }
