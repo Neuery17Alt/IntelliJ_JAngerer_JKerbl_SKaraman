@@ -24,6 +24,7 @@ public class SchereSteinPapier_Control {
 
     @FXML
     private void RockButtonClicked() {
+        ButtonsDisable();
         choice = "Rock";
         labelChoose.setText("Stein ...");
         choice1.setText("Stein");
@@ -32,6 +33,7 @@ public class SchereSteinPapier_Control {
 
     @FXML
     private void PaperButtonClicked() {
+        ButtonsDisable();
         choice = "Paper";
         labelChoose.setText("Papier ...");
         choice1.setText("Papier");
@@ -41,6 +43,7 @@ public class SchereSteinPapier_Control {
 
     @FXML
     private void ScissorButtonClicked() {
+        ButtonsDisable();
         choice = "Scissor";
         labelChoose.setText("Schere ...");
         choice1.setText("Schere");
