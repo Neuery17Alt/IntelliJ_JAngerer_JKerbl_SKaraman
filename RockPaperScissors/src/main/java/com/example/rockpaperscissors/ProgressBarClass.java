@@ -9,6 +9,11 @@ public class ProgressBarClass {
         final Task<Void> task = new Task<Void>() {
             final int N_ITERATIONS = 100;
 
+            /**
+             * This method makes the loading progressbar with the actions
+             * which are meant to be after the loading finished
+             */
+
             @Override
             protected Void call() throws Exception {
                 for (int i = 0; i < N_ITERATIONS; i++) {
