@@ -35,6 +35,7 @@ public class SchereSteinPapier_Control {
         choice = "Paper";
         labelChoose.setText("Papier ...");
         choice1.setText("Papier");
+
         Load();
     }
 
@@ -127,13 +128,13 @@ public class SchereSteinPapier_Control {
         } else if (winner == 0){
             WinnerUndecided();
         }
-            winner = 0;
-            pointsbar.setText(String.valueOf(points));
+        winner = 0;
+        pointsbar.setText(String.valueOf(points));
     }
 
     public void Highscore() {
-    int points = Integer.parseInt(pointsbar.getText());
-    int highscorepoints = Integer.parseInt(highscorebar.getText());
+        int points = Integer.parseInt(pointsbar.getText());
+        int highscorepoints = Integer.parseInt(highscorebar.getText());
         if (points > highscorepoints) {
             highscorepoints = points;
             highscorebar.setText(String.valueOf(highscorepoints));
@@ -141,14 +142,14 @@ public class SchereSteinPapier_Control {
     }
 
     public void ButtonsDisable() {
-            scissorButton.setDisable(true);
-            paperButton.setDisable(true);
-            rockButton.setDisable(true);
-        }
+        scissorButton.setDisable(true);
+        paperButton.setDisable(true);
+        rockButton.setDisable(true);
+    }
 
     private void Load () {
         ProgressBarClass progressBar = new ProgressBarClass();
         progressBar.test(progressbar, this);
     }
 
-    }
+}
